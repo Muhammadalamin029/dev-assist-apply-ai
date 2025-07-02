@@ -3,62 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { CheckCircle, ArrowRight, Zap, FileText, Brain, Download, BarChart3, CreditCard, RefreshCw, Upload, Send, Save, Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { CheckCircle, ArrowRight, Github, Twitter, Linkedin, Brain } from "lucide-react";
+import { Navigation } from "@/components/navigation";
+import { HeroSection } from "@/components/sections/hero-section";
+import { FeaturesSection } from "@/components/sections/features-section";
+import { WaitlistForm } from "@/components/waitlist-form";
 
 const Index = () => {
-  const features = [
-    {
-      icon: <Brain className="h-6 w-6" />,
-      title: "AI-Generated Applications",
-      description: "Paste any job description and let AI generate a custom email + cover letter"
-    },
-    {
-      icon: <Save className="h-6 w-6" />,
-      title: "Multiple Profiles",
-      description: "Save multiple profiles tailored to different job types and roles"
-    },
-    {
-      icon: <Zap className="h-6 w-6" />,
-      title: "Tech Stack Detection",
-      description: "Auto-detect relevant tech stacks based on the job post requirements"
-    },
-    {
-      icon: <Download className="h-6 w-6" />,
-      title: "PDF Export",
-      description: "Export applications as polished, professional PDFs ready to send"
-    },
-    {
-      icon: <BarChart3 className="h-6 w-6" />,
-      title: "Application Dashboard",
-      description: "Track every job application in one clean, organized dashboard"
-    },
-    {
-      icon: <CreditCard className="h-6 w-6" />,
-      title: "Pay-as-you-go Credits",
-      description: "No subscription needed — just pay for what you use with credits"
-    },
-    {
-      icon: <RefreshCw className="h-6 w-6" />,
-      title: "Rephrase & Regenerate",
-      description: "Rephrase or regenerate output with different tones and styles"
-    },
-    {
-      icon: <Upload className="h-6 w-6" />,
-      title: "Resume Management",
-      description: "Upload and manage multiple resumes for different roles"
-    },
-    {
-      icon: <Send className="h-6 w-6" />,
-      title: "Direct Email Sending",
-      description: "Send emails to HR directly from the app without switching tools"
-    },
-    {
-      icon: <FileText className="h-6 w-6" />,
-      title: "Application Library",
-      description: "Save all applications for future reuse or reference"
-    }
-  ];
-
   const pricingPlans = [
     {
       name: "Starter",
@@ -131,84 +82,21 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-purple-50">
-        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))]" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24">
-          <div className="text-center">
-            <Badge className="mb-6 bg-indigo-100 text-indigo-700 hover:bg-indigo-200">
-              🚀 Coming Soon - Join the Waitlist
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
-              Apply Smarter.{" "}
-              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                Code More.
-              </span>
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              AI job assistant built for developers. Generate tailored job emails and cover letters, 
-              manage multiple profiles, and track applications — all in one place. Built for speed and precision.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-lg px-8 py-4 rounded-full">
-                Join the Waitlist <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 rounded-full">
-                Get 5 Free Credits on Launch
-              </Button>
-            </div>
-          </div>
-          <div className="mt-16 relative">
-            <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent h-32 bottom-0 z-10" />
-            <img 
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop" 
-              alt="Developer workspace"
-              className="w-full max-w-4xl mx-auto rounded-2xl shadow-2xl"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Everything you need to land your next role
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From AI generation to application tracking, DevAssist has all the tools developers need.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-4 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                    {feature.icon}
-                  </div>
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-600 leading-relaxed">
-                    {feature.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
+      <Navigation />
+      
+      <HeroSection />
+      
+      <FeaturesSection />
 
       {/* How It Works Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               How it works
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               From job post to application in under 5 minutes
             </p>
           </div>
@@ -222,10 +110,10 @@ const Index = () => {
                 <div className="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+                <h3 className="text-xl font-semibold mb-2 dark:text-white">{item.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
                 {index < 2 && (
-                  <ArrowRight className="hidden md:block absolute top-8 -right-4 h-6 w-6 text-gray-400" />
+                  <ArrowRight className="hidden md:block absolute top-8 -right-4 h-6 w-6 text-gray-400 dark:text-gray-500" />
                 )}
               </div>
             ))}
@@ -234,30 +122,30 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Simple, credit-based pricing
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               No subscriptions. No hidden fees. Pay only for what you use.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {pricingPlans.map((plan, index) => (
-              <Card key={index} className={`relative ${plan.popular ? 'border-indigo-500 shadow-xl scale-105' : 'border-gray-200'}`}>
+              <Card key={index} className={`relative ${plan.popular ? 'border-indigo-500 shadow-xl scale-105' : 'border-gray-200 dark:border-gray-700'} dark:bg-gray-800`}>
                 {plan.popular && (
                   <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-indigo-600">
                     Most Popular
                   </Badge>
                 )}
                 <CardHeader className="text-center">
-                  <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                  <div className="text-4xl font-bold text-indigo-600 my-4">
+                  <CardTitle className="text-2xl dark:text-white">{plan.name}</CardTitle>
+                  <div className="text-4xl font-bold text-indigo-600 dark:text-indigo-400 my-4">
                     ${plan.price}
                   </div>
-                  <CardDescription>
+                  <CardDescription className="dark:text-gray-300">
                     {plan.credits} credits included
                   </CardDescription>
                 </CardHeader>
@@ -266,12 +154,12 @@ const Index = () => {
                     {plan.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center">
                         <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
+                        <span className="text-sm dark:text-gray-300">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Button 
-                    className={`w-full ${plan.popular ? 'bg-indigo-600 hover:bg-indigo-700' : 'bg-gray-900 hover:bg-gray-800'}`}
+                    className={`w-full ${plan.popular ? 'bg-indigo-600 hover:bg-indigo-700' : 'bg-gray-900 hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600'}`}
                   >
                     Join Waitlist
                   </Button>
@@ -283,21 +171,21 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Loved by developers everywhere
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               See what developers are saying about DevAssist
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-0 shadow-lg">
+              <Card key={index} className="border-0 shadow-lg dark:bg-gray-700">
                 <CardContent className="p-6">
-                  <p className="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
+                  <p className="text-gray-700 dark:text-gray-300 mb-6 italic">"{testimonial.quote}"</p>
                   <div className="flex items-center">
                     <img 
                       src={testimonial.avatar} 
@@ -305,8 +193,8 @@ const Index = () => {
                       className="w-12 h-12 rounded-full mr-4"
                     />
                     <div>
-                      <div className="font-semibold">{testimonial.name}</div>
-                      <div className="text-sm text-gray-600">{testimonial.role} {testimonial.company}</div>
+                      <div className="font-semibold dark:text-white">{testimonial.name}</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role} {testimonial.company}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -317,23 +205,23 @@ const Index = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Frequently asked questions
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 dark:text-gray-300">
               Everything you need to know about DevAssist
             </p>
           </div>
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border rounded-lg px-6">
-                <AccordionTrigger className="text-left hover:no-underline">
+              <AccordionItem key={index} value={`item-${index}`} className="border rounded-lg px-6 dark:border-gray-700">
+                <AccordionTrigger className="text-left hover:no-underline dark:text-white">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-600 pb-4">
+                <AccordionContent className="text-gray-600 dark:text-gray-300 pb-4">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -343,7 +231,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600">
+      <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-700 dark:to-purple-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to land your dream job?
@@ -351,14 +239,12 @@ const Index = () => {
           <p className="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">
             Join thousands of developers who are getting early access to DevAssist and 5 free credits at launch.
           </p>
-          <Button size="lg" className="bg-white text-indigo-600 hover:bg-gray-100 text-lg px-8 py-4 rounded-full">
-            Join the Waitlist <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <WaitlistForm className="max-w-md mx-auto" />
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer className="bg-gray-900 dark:bg-black text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
