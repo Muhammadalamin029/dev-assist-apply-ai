@@ -1,57 +1,37 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Brain, Save, Zap, Download, BarChart3, CreditCard, RefreshCw, Upload, Send, FileText } from "lucide-react"
+import { Brain, Save, Zap, Download, BarChart3, CreditCard } from "lucide-react"
 
 const features = [
   {
     icon: <Brain className="h-6 w-6" />,
     title: "AI-Generated Applications",
-    description: "Paste any job description and let AI generate a custom email + cover letter"
+    description: "Paste any job description and let AI generate a custom email + cover letter tailored to your profile"
   },
   {
     icon: <Save className="h-6 w-6" />,
     title: "Multiple Profiles",
-    description: "Save multiple profiles tailored to different job types and roles"
+    description: "Save multiple profiles tailored to different job types and automatically match skills to requirements"
   },
   {
     icon: <Zap className="h-6 w-6" />,
     title: "Tech Stack Detection",
-    description: "Auto-detect relevant tech stacks based on the job post requirements"
+    description: "Auto-detect relevant technologies and frameworks based on the job post requirements"
   },
   {
     icon: <Download className="h-6 w-6" />,
     title: "PDF Export",
-    description: "Export applications as polished, professional PDFs ready to send"
+    description: "Export applications as polished, professional PDFs ready to send to employers"
   },
   {
     icon: <BarChart3 className="h-6 w-6" />,
-    title: "Application Dashboard",
-    description: "Track every job application in one clean, organized dashboard"
+    title: "Application Tracking",
+    description: "Track every job application in one clean, organized dashboard with status updates"
   },
   {
     icon: <CreditCard className="h-6 w-6" />,
-    title: "Pay-as-you-go Credits",
-    description: "No subscription needed — just pay for what you use with credits"
-  },
-  {
-    icon: <RefreshCw className="h-6 w-6" />,
-    title: "Rephrase & Regenerate",
-    description: "Rephrase or regenerate output with different tones and styles"
-  },
-  {
-    icon: <Upload className="h-6 w-6" />,
-    title: "Resume Management",
-    description: "Upload and manage multiple resumes for different roles"
-  },
-  {
-    icon: <Send className="h-6 w-6" />,
-    title: "Direct Email Sending",
-    description: "Send emails to HR directly from the app without switching tools"
-  },
-  {
-    icon: <FileText className="h-6 w-6" />,
-    title: "Application Library",
-    description: "Save all applications for future reuse or reference"
+    title: "Pay-as-you-go",
+    description: "No subscription needed — just pay for what you use with simple credit-based pricing"
   }
 ]
 
