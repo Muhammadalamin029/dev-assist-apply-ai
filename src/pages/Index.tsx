@@ -10,83 +10,76 @@ const Index = () => {
     {
       icon: <Brain className="h-6 w-6" />,
       title: "AI-Generated Applications",
-      description: "Paste a job description and let AI generate your email and cover letter instantly"
+      description: "Paste any job description and let AI generate a custom email + cover letter"
     },
     {
       icon: <Save className="h-6 w-6" />,
-      title: "Saved Profiles",
-      description: "Choose from saved profiles or create a new one tailored to the role"
+      title: "Multiple Profiles",
+      description: "Save multiple profiles tailored to different job types and roles"
     },
     {
       icon: <Zap className="h-6 w-6" />,
-      title: "Tech Stack Matching",
-      description: "Automatically detect and match relevant technologies from job posts"
+      title: "Tech Stack Detection",
+      description: "Auto-detect relevant tech stacks based on the job post requirements"
     },
     {
       icon: <Download className="h-6 w-6" />,
       title: "PDF Export",
-      description: "Export cover letters and emails as polished, professional PDFs"
+      description: "Export applications as polished, professional PDFs ready to send"
     },
     {
       icon: <BarChart3 className="h-6 w-6" />,
       title: "Application Dashboard",
-      description: "Built-in dashboard to track all your applications in one place"
+      description: "Track every job application in one clean, organized dashboard"
     },
     {
       icon: <CreditCard className="h-6 w-6" />,
-      title: "Credit-Based Pricing",
-      description: "Pay as you go with credits — no monthly subscriptions required"
+      title: "Pay-as-you-go Credits",
+      description: "No subscription needed — just pay for what you use with credits"
     },
     {
       icon: <RefreshCw className="h-6 w-6" />,
-      title: "Multiple Formats",
-      description: "Re-generate content with different tones, styles, or formats"
+      title: "Rephrase & Regenerate",
+      description: "Rephrase or regenerate output with different tones and styles"
     },
     {
       icon: <Upload className="h-6 w-6" />,
       title: "Resume Management",
-      description: "Upload and manage multiple resumes per profile for different roles"
+      description: "Upload and manage multiple resumes for different roles"
     },
     {
       icon: <Send className="h-6 w-6" />,
       title: "Direct Email Sending",
-      description: "Send application emails directly to HR from within the app"
+      description: "Send emails to HR directly from the app without switching tools"
     },
     {
       icon: <FileText className="h-6 w-6" />,
-      title: "Content Library",
-      description: "Save all generated content for future use or re-applications"
+      title: "Application Library",
+      description: "Save all applications for future reuse or reference"
     }
   ];
 
   const pricingPlans = [
     {
       name: "Starter",
-      credits: 25,
-      price: 9,
+      credits: 10,
+      price: 3,
       popular: false,
-      features: ["25 AI generations", "Basic templates", "PDF export", "Email support"]
+      features: ["10 AI generations", "Basic templates", "PDF export", "Email support"]
     },
     {
-      name: "Professional",
-      credits: 100,
-      price: 29,
+      name: "Dev Pack",
+      credits: 50,
+      price: 10,
       popular: true,
-      features: ["100 AI generations", "Premium templates", "Advanced customization", "Priority support", "Application tracking"]
+      features: ["50 AI generations", "Premium templates", "Application tracking", "Priority support"]
     },
     {
-      name: "Expert",
-      credits: 250,
-      price: 59,
+      name: "Power Hunter",
+      credits: 150,
+      price: 25,
       popular: false,
-      features: ["250 AI generations", "All templates", "Custom branding", "Direct email sending", "Analytics dashboard"]
-    },
-    {
-      name: "Enterprise",
-      credits: 500,
-      price: 99,
-      popular: false,
-      features: ["500 AI generations", "Team collaboration", "API access", "Custom integrations", "Dedicated support"]
+      features: ["150 AI generations", "All templates", "Direct email sending", "Advanced analytics"]
     }
   ];
 
@@ -128,12 +121,12 @@ const Index = () => {
       answer: "Absolutely! All generated content is fully editable. You can make tweaks, regenerate with different tones, or use our templates as starting points."
     },
     {
-      question: "Is my data secure?",
-      answer: "Yes, we use enterprise-grade security. Your resumes, profiles, and generated content are encrypted and stored securely. We never share your data with third parties."
+      question: "When will DevAssist be available?",
+      answer: "We're launching soon! Join our waitlist to get early access and 5 free credits when we go live."
     },
     {
-      question: "Do you offer refunds?",
-      answer: "We offer a 100% satisfaction guarantee. If you're not happy with your first purchase, we'll refund your credits within 30 days."
+      question: "Is my data secure?",
+      answer: "Yes, we use enterprise-grade security. Your resumes, profiles, and generated content are encrypted and stored securely. We never share your data with third parties."
     }
   ];
 
@@ -145,7 +138,7 @@ const Index = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24">
           <div className="text-center">
             <Badge className="mb-6 bg-indigo-100 text-indigo-700 hover:bg-indigo-200">
-              🚀 Now with 5 Free Credits
+              🚀 Coming Soon - Join the Waitlist
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
               Apply Smarter.{" "}
@@ -154,15 +147,15 @@ const Index = () => {
               </span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              The AI-powered job assistant built specifically for developers. Generate tailored cover letters and emails, 
-              track applications, and land your dream job faster.
+              AI job assistant built for developers. Generate tailored job emails and cover letters, 
+              manage multiple profiles, and track applications — all in one place. Built for speed and precision.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-lg px-8 py-4 rounded-full">
-                Start With 5 Free Credits <ArrowRight className="ml-2 h-5 w-5" />
+                Join the Waitlist <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8 py-4 rounded-full">
-                View Demo
+                Get 5 Free Credits on Launch
               </Button>
             </div>
           </div>
@@ -219,12 +212,11 @@ const Index = () => {
               From job post to application in under 5 minutes
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { step: "1", title: "Paste Job Description", description: "Copy and paste any job posting URL or description" },
-              { step: "2", title: "Choose Profile", description: "Select or create a profile that matches the role" },
-              { step: "3", title: "AI Generation", description: "Let AI craft your personalized cover letter and email" },
-              { step: "4", title: "Apply & Track", description: "Export as PDF or send directly, then track your progress" }
+              { step: "1", title: "Paste", description: "Copy and paste any job posting URL or description into DevAssist" },
+              { step: "2", title: "Generate", description: "AI creates a personalized cover letter and email tailored to the role" },
+              { step: "3", title: "Send", description: "Export as PDF or send directly to HR, then track your application" }
             ].map((item, index) => (
               <div key={index} className="text-center relative">
                 <div className="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
@@ -232,7 +224,7 @@ const Index = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                 <p className="text-gray-600">{item.description}</p>
-                {index < 3 && (
+                {index < 2 && (
                   <ArrowRight className="hidden md:block absolute top-8 -right-4 h-6 w-6 text-gray-400" />
                 )}
               </div>
@@ -252,7 +244,7 @@ const Index = () => {
               No subscriptions. No hidden fees. Pay only for what you use.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {pricingPlans.map((plan, index) => (
               <Card key={index} className={`relative ${plan.popular ? 'border-indigo-500 shadow-xl scale-105' : 'border-gray-200'}`}>
                 {plan.popular && (
@@ -281,7 +273,7 @@ const Index = () => {
                   <Button 
                     className={`w-full ${plan.popular ? 'bg-indigo-600 hover:bg-indigo-700' : 'bg-gray-900 hover:bg-gray-800'}`}
                   >
-                    Get Started
+                    Join Waitlist
                   </Button>
                 </CardContent>
               </Card>
@@ -357,10 +349,10 @@ const Index = () => {
             Ready to land your dream job?
           </h2>
           <p className="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of developers who are already using DevAssist to apply smarter and get hired faster.
+            Join thousands of developers who are getting early access to DevAssist and 5 free credits at launch.
           </p>
           <Button size="lg" className="bg-white text-indigo-600 hover:bg-gray-100 text-lg px-8 py-4 rounded-full">
-            Generate My First Application <ArrowRight className="ml-2 h-5 w-5" />
+            Join the Waitlist <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
       </section>
@@ -377,7 +369,7 @@ const Index = () => {
                 <span className="text-2xl font-bold">DevAssist</span>
               </div>
               <p className="text-gray-400 mb-6 max-w-md">
-                The AI-powered job assistant built specifically for developers. Apply smarter, not harder.
+                AI job assistant built for developers. Apply smarter, not harder.
               </p>
               <div className="flex space-x-4">
                 <Button variant="ghost" size="sm">
@@ -398,7 +390,7 @@ const Index = () => {
                 <li><a href="#" className="hover:text-white transition-colors">Features</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Pricing</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Templates</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">API</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Roadmap</a></li>
               </ul>
             </div>
             
