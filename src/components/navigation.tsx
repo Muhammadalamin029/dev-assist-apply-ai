@@ -2,43 +2,13 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Brain, Menu, User, LogOut } from "lucide-react"
+import { Brain, Menu } from "lucide-react"
 import { ThemeToggle } from "./theme-toggle"
-import { useAuth } from "@/contexts/AuthContext"
-import { logOut } from "@/services/authService"
 import { useNavigate } from "react-router-dom"
-import { useToast } from "@/hooks/use-toast"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
-  const { currentUser } = useAuth()
   const navigate = useNavigate()
-  const { toast } = useToast()
-
-  const handleLogout = async () => {
-    try {
-      await logOut()
-      toast({
-        title: "Signed out",
-        description: "You've been successfully signed out.",
-      })
-      navigate('/')
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to sign out. Please try again.",
-        variant: "destructive",
-      })
-    }
-  }
-
-  const handleAuthClick = () => {
-    if (currentUser) {
-      navigate('/dashboard')
-    } else {
-      navigate('/auth')
-    }
-  }
 
   return (
     <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
@@ -62,20 +32,6 @@ export function Navigation() {
               FAQ
             </a>
             <ThemeToggle />
-            {currentUser ? (
-              <div className="flex items-center space-x-2">
-                <Button variant="ghost" size="sm" onClick={handleAuthClick}>
-                  <User className="h-4 w-4 mr-2" />
-                  Dashboard
-                </Button>
-                <Button variant="outline" size="sm" onClick={handleLogout}>
-                  <LogOut className="h-4 w-4 mr-2" />
-                  Sign Out
-                </Button>
-              </div>
-            ) : (
-              <Button onClick={handleAuthClick}>Sign In</Button>
-            )}
           </div>
 
           <div className="md:hidden flex items-center space-x-2">
@@ -97,22 +53,6 @@ export function Navigation() {
                   <a href="#faq" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
                     FAQ
                   </a>
-                  {currentUser ? (
-                    <>
-                      <Button variant="ghost" onClick={() => { handleAuthClick(); setIsOpen(false); }}>
-                        <User className="h-4 w-4 mr-2" />
-                        Dashboard
-                      </Button>
-                      <Button variant="outline" onClick={() => { handleLogout(); setIsOpen(false); }}>
-                        <LogOut className="h-4 w-4 mr-2" />
-                        Sign Out
-                      </Button>
-                    </>
-                  ) : (
-                    <Button onClick={() => { handleAuthClick(); setIsOpen(false); }}>
-                      Sign In
-                    </Button>
-                  )}
                 </div>
               </SheetContent>
             </Sheet>
