@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ArrowRight, CheckCircle, Loader2 } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
+import { addToWaitlist } from "@/services/waitlistService"
 
 interface WaitlistFormProps {
   size?: "default" | "lg"
@@ -32,8 +33,7 @@ export function WaitlistForm({ size = "default", variant = "default", className 
     setIsLoading(true)
 
     try {
-      // Simulate API call - replace with your actual endpoint
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      await addToWaitlist(email)
       
       setIsSubmitted(true)
       toast({
